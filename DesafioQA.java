@@ -69,3 +69,32 @@ public class DesafioQA {
         WebElement confirmPagination = driver.findElement(By.xpath("//[@id="page-top"]/div[2]/center/ul"));
         assertTrue(confirmPagination.isDisplayed());                                                                    //Verifica se paginação é exibido.
     }
+
+	@Test
+    public void verificaLoguin() {
+
+        /*
+        Funcionalidade: Verificação de Loguin.
+        Cenário: Realizar loguin na pagina.
+        Dado que navego para a página de loguin do site
+        E digito o usuario no campo de 'Username' e senha no campo de Password
+        Quando clico no botão Entrar
+        Então visualizo ???
+        /*
+
+        driver.findElement(By.xpath("//[@id="navbar"]/ul/li[5]/a")).click();
+        driver.findElement(By.xpath("//[@id="username"]")).sendKeys("testejunit2021");
+        driver.findElement(By.xpath("//[@id="password"]")).sendKeys("12345678");
+        driver.findElement(By.xpath("//[@id="page-top"]/div[2]/form/div[2]/button")).click();
+        driver.findElement(By.xpath("//[@id="navbar"]/ul/li[6]/a")).click();
+
+
+        WebElement confirmLoguin = driver.findElement(By.xpath("//*[@id="navbar"]/ul/li[6]/a"));
+        assertTrue(confirmLoguin.getText().contains("TESTEJUNIT2021"));
+
+    }
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
